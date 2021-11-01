@@ -88,7 +88,7 @@ let departure = () => {
 		timeBoarding.style.color = "#f00";
 		timeDeparture.innerHTML = `EN COURS`;
 		timeDeparture.style.color = "#0f0";
-		if(secondLeftDepartureTrunc + 10 <= 0) {
+		if(secondLeftDepartureTrunc + 3600 <= 0) {
 			timeDeparture.innerHTML = `TERMINE`;
 		timeDeparture.style.color = "#f00";
 		}
@@ -123,7 +123,7 @@ let arrival = () => {
 		timeDeparture.style.color = "#f00";
 		timeArrival.innerHTML = `EN COURS`;
 		timeArrival.style.color = "#0f0";
-		if(secondLeftArrivalTrunc +10 <= 0){
+		if(secondLeftArrivalTrunc + 3600 <= 0){
 			timeArrival.innerHTML = `TERMINE`;
 		timeArrival.style.color = "#f00";
 		}
