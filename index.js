@@ -25,11 +25,11 @@ let checkIn = () => {
 	let secondLeftCheckIn = (minuteLeftCheckIn - minuteLeftCheckInTrunc) * 60;
 	let secondLeftCheckInTrunc = Math.trunc(secondLeftCheckIn);	
 
-	if (dayLeftCheckInTrunc <= 0 && hourLeftCheckInTrunc <= 0 && minuteLeftCheckInTrunc <= 0 && secondLeftCheckInTrunc <= 0) {
+	if (restCheckIn <= 0) {
 		timeCheckIn.innerHTML = `EN COURS`;
 		timeCheckIn.style.color = "#0f0";
 	} else {
-		timeCheckIn.innerHTML = `${dayLeftCheckInTrunc} jours ${hourLeftCheckInTrunc} heures ${minuteLeftCheckInTrunc} minutes ${secondLeftCheckInTrunc} secondes`;
+		timeCheckIn.innerHTML = `${dayLeftCheckInTrunc} d ${hourLeftCheckInTrunc} h ${minuteLeftCheckInTrunc} m ${secondLeftCheckInTrunc} s`;
 		timeCheckIn.style.color = "#00f";
 	}
 }
@@ -50,13 +50,13 @@ let boarding = () => {
 	let secondLeftBoarding = (minuteLeftBoarding - minuteLeftBoardingTrunc) * 60;
 	let secondLeftBoardingTrunc = Math.trunc(secondLeftBoarding);	
 
-	if (dayLeftBoardingTrunc <= 0 && hourLeftBoardingTrunc <= 0 && minuteLeftBoardingTrunc <= 0 && secondLeftBoardingTrunc <= 0) {
+	if (restBoarding <= 0) {
 		timeCheckIn.innerHTML = `TERMINE`;
 		timeCheckIn.style.color = "#f00";
 		timeBoarding.innerHTML = `EN COURS`;
 		timeBoarding.style.color = "#0f0";
 	} else {
-		timeBoarding.innerHTML = `${dayLeftBoardingTrunc} jours ${hourLeftBoardingTrunc} heures ${minuteLeftBoardingTrunc} minutes ${secondLeftBoardingTrunc} secondes`;
+		timeBoarding.innerHTML = `${dayLeftBoardingTrunc} d ${hourLeftBoardingTrunc} h ${minuteLeftBoardingTrunc} m ${secondLeftBoardingTrunc} s`;
 		timeBoarding.style.color = "#00f";
 	}
 }
@@ -81,19 +81,19 @@ let departure = () => {
 	let secondLeftDeparture = (minuteLeftDeparture - minuteLeftDepartureTrunc) * 60;
 	let secondLeftDepartureTrunc = Math.trunc(secondLeftDeparture);	
 
-	if (dayLeftDepartureTrunc <= 0 && hourLeftDepartureTrunc <= 0 && minuteLeftDepartureTrunc <= 0 && secondLeftDepartureTrunc <= 0) {
+	if (restDeparture <= 0) {
 		timeCheckIn.innerHTML = `TERMINE`;
 		timeCheckIn.style.color = "#f00";
 		timeBoarding.innerHTML = `TERMINE`;
 		timeBoarding.style.color = "#f00";
 		timeDeparture.innerHTML = `EN COURS`;
 		timeDeparture.style.color = "#0f0";
-		if(secondLeftDepartureTrunc + 3600 <= 0) {
+		if(secondLeftDepartureTrunc + 900 <= 0) {
 			timeDeparture.innerHTML = `TERMINE`;
 		timeDeparture.style.color = "#f00";
 		}
 	} else {
-		timeDeparture.innerHTML = `${dayLeftDepartureTrunc} jours ${hourLeftDepartureTrunc} heures ${minuteLeftDepartureTrunc} minutes ${secondLeftDepartureTrunc} secondes`;
+		timeDeparture.innerHTML = `${dayLeftDepartureTrunc} d ${hourLeftDepartureTrunc} h ${minuteLeftDepartureTrunc} m ${secondLeftDepartureTrunc} s`;
 		timeDeparture.style.color = "#00f";
 	}
 }
@@ -114,7 +114,7 @@ let arrival = () => {
 	let secondLeftArrival = (minuteLeftArrival - minuteLeftArrivalTrunc) * 60;
 	let secondLeftArrivalTrunc = Math.trunc(secondLeftArrival);	
 
-	if (dayLeftArrivalTrunc <= 0 && hourLeftArrivalTrunc <= 0 && minuteLeftArrivalTrunc <= 0 && secondLeftArrivalTrunc <= 0) {
+	if (restArrival <= 0) {
 		timeCheckIn.innerHTML = `TERMINE`;
 		timeCheckIn.style.color = "#f00";
 		timeBoarding.innerHTML = `TERMINE`;
@@ -128,7 +128,7 @@ let arrival = () => {
 		timeArrival.style.color = "#f00";
 		}
 	} else {
-		timeArrival.innerHTML = `${dayLeftArrivalTrunc} jours ${hourLeftArrivalTrunc} heures ${minuteLeftArrivalTrunc} minutes ${secondLeftArrivalTrunc} secondes`;
+		timeArrival.innerHTML = `${dayLeftArrivalTrunc} d ${hourLeftArrivalTrunc} h ${minuteLeftArrivalTrunc} m ${secondLeftArrivalTrunc} s`;
 		timeArrival.style.color = "#00f";
 	}
 }
